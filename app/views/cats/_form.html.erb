@@ -1,7 +1,8 @@
 <%# 全体を`turbo_frame_tag`で囲う。そうすることでturbo_frame_tagがdom_idを利用して'cat_1'のように変換する %>
 <%# 編集リンクをクリックすると、_cat.html.erbの<turbo-frame>部分がこの部分に置換される %>
 <%= turbo_frame_tag cat do %>
-  <%= bootstrap_form_with(model: cat) do |form| %>
+  <%# turbo:submit-end（Turboのsubmit後）イベント発火時に、modal#close（モーダルを閉じる）を実行する %>
+  <%= bootstrap_form_with(model: cat, data: { action: "turbo:submit-end->modal#close" }) do |form| %>
     <div class="row py-2 border-top">
       <div class="col-4">
         <%= form.text_field :name,
