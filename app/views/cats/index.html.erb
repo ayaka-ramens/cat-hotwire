@@ -41,7 +41,7 @@
 
 <!-- 一覧 -->
 <div class="card shadow mt-3">
-  <%= turbo_frame_tag "cats-list" do %>
+  <%= turbo_frame_tag "cats-list", data: { turbo_action: :advance } do %>
     <div class="card-header">
       <%= icon_with_text("table", "一覧") %>
     </div>
