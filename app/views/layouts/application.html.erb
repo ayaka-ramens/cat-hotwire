@@ -21,7 +21,10 @@
           </div>
 
           <div class="col my-4">
-            <%= render "flash" %>
+            <%# turbo streamの操作対象にするためid flashで囲う %>
+            <div id="flash">
+              <%= render "flash" %>
+            </div>
             <%= yield %>
           </div>
         </div>
