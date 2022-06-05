@@ -3,5 +3,9 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
+
 import FormController from "./form_controller.js"
 application.register("form", FormController)
+
+import ModalController from "./modal_controller.js"
+application.register("modal", ModalController)
